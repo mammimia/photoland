@@ -17,18 +17,20 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/products', element: <Products /> },
-      { path: '/product/:id', element: <ProductDetails /> },
-      { path: '/search', element: <Search /> }
-    ]
-  },
+const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { path: '/', element: <Home /> },
+        { path: '/products', element: <Products /> },
+        { path: '/product/:id', element: <ProductDetails /> },
+        { path: '/search', element: <Search /> }
+      ]
+    }
+  ],
   { basename: process.env.PUBLIC_URL }
-]);
+);
 
 const App = () => {
   return <RouterProvider router={router} />;
