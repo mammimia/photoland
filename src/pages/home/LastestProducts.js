@@ -1,8 +1,8 @@
 import React from 'react';
-import useFetch from '../hooks/useFetch';
-import ProductSlider from '../components/ProductSlider';
+import useFetch from '../../hooks/useFetch';
+import ProductSlider from '../../components/ProductSlider';
 
-const Home = () => {
+const LastestProducts = () => {
   const { data } = useFetch('/products?populate=*&filters[isNew]=true');
   return (
     <div className="mb-16">
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LastestProducts;

@@ -2,10 +2,11 @@ import React from 'react';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Home from './pages/Home';
-import Products from './pages/Products';
+import Home from './pages/home/Home';
+import Products from './pages/CategoryDetails';
 import ProductDetails from './pages/ProductDetails';
 import Search from './pages/Search';
+import CategoryDetails from './pages/CategoryDetails';
 
 const Layout = () => {
   return (
@@ -23,7 +24,7 @@ const router = createBrowserRouter(
       element: <Layout />,
       children: [
         { path: '/', element: <Home /> },
-        { path: '/products', element: <Products /> },
+        { path: '/category/:id', element: <CategoryDetails /> },
         { path: '/product/:id', element: <ProductDetails /> },
         { path: '/search', element: <Search /> }
       ]
