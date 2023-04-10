@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/photoland/static/css/main.c5274ef5.css",
-    "main.js": "/photoland/static/js/main.265432cd.js",
+    "main.js": "/photoland/static/js/main.a0e62dd2.js",
     "index.html": "/photoland/index.html",
     "main.c5274ef5.css.map": "/photoland/static/css/main.c5274ef5.css.map",
-    "main.265432cd.js.map": "/photoland/static/js/main.265432cd.js.map"
+    "main.a0e62dd2.js.map": "/photoland/static/js/main.a0e62dd2.js.map"
   },
   "entrypoints": [
     "static/css/main.c5274ef5.css",
-    "static/js/main.265432cd.js"
+    "static/js/main.a0e62dd2.js"
   ]
 }
