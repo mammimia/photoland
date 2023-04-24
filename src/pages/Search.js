@@ -13,8 +13,6 @@ const Search = () => {
     `/products?populate=*&filters[title][$contains]=${searchTerm}`
   );
 
-  console.log(products);
-
   return (
     <div className="mb-[30px] pt-40 lg:pt-4 lg:pt-0">
       <div className="container mx-auto">
