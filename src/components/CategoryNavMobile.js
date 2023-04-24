@@ -21,7 +21,7 @@ const CategoryNavMobile = ({ setCatNavMobile }) => {
             to={`category/${category.id}`}
             key={category.id}
           >
-            {category.attributes.title}
+            {category.attributes.title} Cameras
           </Link>
         ))}
       </div>
