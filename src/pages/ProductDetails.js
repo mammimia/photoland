@@ -12,6 +12,7 @@ const ProductDetails = () => {
 
   if (!product) return <div className="container mx-auto">Loading...</div>;
 
+  const categoryTitle = product.categories?.data[0]?.attributes?.title;
   console.log(product);
   return (
     <div className="mb-16 pt-44 lg:pt-[30px] xl:pt-0">
@@ -32,7 +33,7 @@ const ProductDetails = () => {
           justify-center"
           >
             <div className="uppercase text-accent text-lg font-medium mb-2">
-              {product.categories?.data[0]?.attributes?.title} cameras
+              {categoryTitle} cameras
             </div>
             <h2 className="h2 mb-4">{product.title}</h2>
             <p className="mb-12">{product.description}</p>
@@ -44,7 +45,7 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-        <RelatedProducts />
+        <RelatedProducts categoryTitle={categoryTitle} />
       </div>
     </div>
   );
