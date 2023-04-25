@@ -8,7 +8,6 @@ import { request } from '../utils/request';
 const Cart = () => {
   const { cart, setIsOpen, total, clearCart } = useContext(CartContext);
 
-  console.log(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
   const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
   const handleCheckout = async () => {
@@ -21,9 +20,7 @@ const Cart = () => {
       await stripe.redirectToCheckout({
         sessionId: rest.data.stripeSession.id
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
