@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/photoland/static/css/main.680c867c.css",
-    "main.js": "/photoland/static/js/main.79c9d3e4.js",
+    "main.js": "/photoland/static/js/main.8bacd64d.js",
     "static/media/camera.png": "/photoland/static/media/camera.2762795c8e314c5696dc.png",
     "static/media/mainSlider_bg.png": "/photoland/static/media/mainSlider_bg.1e347e157167d542e43e.png",
     "static/media/promo_img2.png": "/photoland/static/media/promo_img2.f01c9a4b6b044df47fa3.png",
     "static/media/promo_img1.png": "/photoland/static/media/promo_img1.b69bd7fc15a6a2a06dd9.png",
     "index.html": "/photoland/index.html",
     "main.680c867c.css.map": "/photoland/static/css/main.680c867c.css.map",
-    "main.79c9d3e4.js.map": "/photoland/static/js/main.79c9d3e4.js.map"
+    "main.8bacd64d.js.map": "/photoland/static/js/main.8bacd64d.js.map"
   },
   "entrypoints": [
     "static/css/main.680c867c.css",
-    "static/js/main.79c9d3e4.js"
+    "static/js/main.8bacd64d.js"
   ]
 }
