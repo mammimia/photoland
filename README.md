@@ -15,6 +15,12 @@ https://mammimia.github.io/photoland/
 - Strapi
 - Stripe
 
+## Environment Variables
+
+- REACT_APP_API_URL (Strapi URL)
+- REACT_APP_API_TOKEN (Strapi Token)
+- REACT_APP_STRIPE_PUBLIC_KEY (Stripe Public Key)
+
 ## Installation
 
 To install this project follow the steps after cloning.
