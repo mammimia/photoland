@@ -13,7 +13,6 @@ const CartProvider = ({ children }) => {
       return acc + item.amount;
     }, 0);
     setItemsAmount(amount);
-    console.log('amount', amount);
   }, [cart]);
 
   useEffect(() => {
