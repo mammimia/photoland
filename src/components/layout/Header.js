@@ -9,7 +9,7 @@ import Cart from '../Cart';
 import { CartContext } from '../../context/CartContext';
 
 const Header = () => {
-  const { isOpen, setIsOpen } = useContext(CartContext);
+  const { isOpen, setIsOpen, itemsAmount } = useContext(CartContext);
   const [catNavMobile, setCatNavMobile] = useState(false);
   return (
     <header
@@ -55,7 +55,7 @@ const Header = () => {
               rounded-full top-3 -right-1 text-[13px] flex justify-center
               items-center font-bold tracking-[-0.1em]"
               >
-                2
+                {itemsAmount}
               </div>
             </div>
             <div
