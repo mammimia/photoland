@@ -6,7 +6,6 @@ const CartProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [itemsAmount, setItemsAmount] = useState([]);
-  const [amount, setAmount] = useState(0);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -17,6 +16,13 @@ const CartProvider = ({ children }) => {
     console.log('amount', amount);
   }, [cart]);
 
+  useEffect(() => {
+    const total = cart.reduce((acc, item) => {
+      return acc + item.amount * item.attributes.price;
+    }, 0);
+    setTotal(total);
+  }, [cart]);
+
   const addToCart = (item, id) => {
     const itemId = parseInt(id);
     const newItem = { ...item, amount: 1 };
@@ -24,7 +30,6 @@ const CartProvider = ({ children }) => {
     if (cartItem) {
       const newCart = cart.map((item) => {
         if (item.id === itemId) {
-          setAmount(cartItem.amount + 1);
           return { ...item, amount: cartItem.amount + 1 };
         } else {
           return item;
@@ -42,6 +47,28 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
+  const setItemAmount = (id, amount) => {
+    const value = parseInt(amount);
+    const cartItem = cart.find((item) => item.id === id);
+    if (cartItem) {
+      const newCart = cart.map((item) => {
+        if (item.id === id) {
+          if (isNaN(value)) {
+            return { ...item, amount: 1 };
+          }
+          return { ...item, amount: value };
+        } else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -50,7 +77,10 @@ const CartProvider = ({ children }) => {
         cart,
         addToCart,
         removeFromCart,
-        itemsAmount
+        itemsAmount,
+        setItemAmount,
+        total,
+        clearCart
       }}
     >
       {children}

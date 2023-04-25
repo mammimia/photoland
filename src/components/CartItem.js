@@ -10,7 +10,7 @@ const CartItem = ({ item }) => {
   if (!item) return null;
 
   return (
-    <div className="flex gap-x-8">
+    <div className="flex gap-x-8 grad rounded-[8px] p-3">
       <Link to={`product/${item.id}`} className="w-[70px] h-[70px]">
         <img
           src={`${process.env.REACT_APP_API_URL}${item.attributes?.image?.data?.attributes?.url}`}
@@ -28,12 +28,12 @@ const CartItem = ({ item }) => {
             <IoTrash />
           </div>
         </div>
-        <div className="flex items-center gap-x-12">
-          <div className="flex gap-x-4 mb-2">
+        <div className="flex items-center gap-x-8 mb-2">
+          <div className="flex">
             <Qty item={item} />
-            <div className="text-accent text-xl">
-              $ {item.attributes.price * item.amount}
-            </div>
+          </div>
+          <div className="text-accent text-lg">
+            $ {parseFloat(item.attributes.price * item.amount).toFixed(2)}
           </div>
         </div>
         <div>
